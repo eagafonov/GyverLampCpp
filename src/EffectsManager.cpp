@@ -73,6 +73,8 @@
 
 #include "effects/basic/ScrollingTextEffect.h"
 
+#include "effects/test/RunningPixelEffect.h"
+
 #include <map>
 
 namespace  {
@@ -262,6 +264,8 @@ void RegisterEffect(const String &id)
 EffectsManager::EffectsManager()
 {
     randomSeed(micros());
+
+    RegisterEffect<RunningPixelEffect>(F("Running Pixel"));
 
     RegisterEffect<SparklesEffect>(F("Sparkles"));
     RegisterEffect<FireEffect>(F("Fire"));
