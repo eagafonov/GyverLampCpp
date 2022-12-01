@@ -214,7 +214,7 @@ void onMqttDisconnect(AsyncMqttClientDisconnectReason reason)
         Serial.println(F("ESP8266_NOT_ENOUGH_SPACE"));
         break;
     default:
-        Serial.printf_P(PSTR("unknown %d\n"), reason);
+        Serial.printf_P(PSTR("unknown %d\n"), (int)reason);
     }
     mqttReconnectTimer.once(10, connectToMqtt);
 }

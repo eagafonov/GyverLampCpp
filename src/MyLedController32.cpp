@@ -318,7 +318,6 @@ void IRAM_ATTR ESP32RMTCustomController::interruptHandler(void *arg)
     uint32_t intr_st = RMT.int_st.val;
     uint8_t channel;
 
-    bool stuff_to_do = false;
     for (channel = 0; channel < gMaxChannel; channel++) {
         int tx_done_bit = channel * 3;
         int tx_next_bit = channel + 24;
