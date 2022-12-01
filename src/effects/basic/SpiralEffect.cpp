@@ -60,7 +60,7 @@ uint8_t spirominy = 0;
 uint8_t spiromaxy = 0;
 
 uint8_t spirocount = 1;
-uint8_t spirooffset = 256;
+uint8_t spirooffset = 255;
 boolean spiroincrement = false;
 
 boolean spirohandledChange = false;
@@ -86,7 +86,7 @@ void SpiralEffect::activate()
     spirominy = spirocenterY - spiroradiusy;
     spiromaxy = spirocenterY + spiroradiusy + 1;
 
-    spirooffset = 256 / spirocount;
+    spirooffset = 255 / spirocount;
 }
 
 void SpiralEffect::tick()
@@ -142,7 +142,7 @@ void SpiralEffect::tick()
                     spirocount -= 1;
             }
 
-            spirooffset = 256 / spirocount;
+            spirooffset = 255 / spirocount;
         }
 
         if (!change) {
