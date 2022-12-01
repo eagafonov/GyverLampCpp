@@ -32,8 +32,8 @@ namespace  {
 uint16_t webServerPort = 80;
 
 #if defined(ESP32)
-const uint8_t btnPin = 15;
-const GButton::PullType btnType = GButton::PullTypeLow;
+const uint8_t btnPin = 0;
+const GButton::PullType btnType = GButton::PullTypeHigh;
 #elif defined(SONOFF)
 const uint8_t btnPin = 0;
 const GButton::PullType btnType = GButton::PullTypeHigh;
