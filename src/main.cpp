@@ -213,10 +213,17 @@ void setup() {
     printFlashInfo();
     printFreeHeap();
 
+#if defined(ESP32)
+    if(!FLASHFS.begin(true)) {
+        Serial.println(F("An Error has occurred while mounting FLASHFS"));
+        return;
+    }
+#else
     if(!FLASHFS.begin()) {
         Serial.println(F("An Error has occurred while mounting FLASHFS"));
         return;
     }
+#endif
 
     Settings::Initialize();
 // default values for button
